@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Secure Password Vault (MVP)
 
-## Getting Started
+A full-stack web application designed to securely generate, store, and manage user passwords with a modern, theme-aware interface.
 
-First, run the development server:
+[**Live Demo**](https://assessment-iwqc-7yn5yk3ag-vedantkhedkars-projects.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
+![Secure Vault Screenshot](/src/assets/image.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Secure User Authentication:** Users can register and log in with passwords hashed using **bcryptjs**. Sessions are managed with **JSON Web Tokens (JWT)**.
+- **Single Page Application (SPA) Flow:** A seamless user experience where the landing, authentication, and dashboard views are all handled automatically on a single page.
+- **Encrypted CRUD Vault:** Full Create, Read, Update, and Delete functionality for password entries.
+- **Client-Side Encryption:** All vault passwords are encrypted in the browser with **AES encryption** (`crypto-js`) before being sent to the server, ensuring the database never stores plaintext secrets.
+- **Password Generator:** A utility to create strong, customizable passwords based on length and character types.
+- **Dark Mode:** A toggleable light/dark theme for improved user experience, built with CSS variables.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+This project was built using a modern, full-stack JavaScript architecture:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** **Next.js** (utilizing the App Router for both frontend React components and backend API routes).
+- **Database:** **MongoDB**, with **Mongoose** as the Object Data Modeling (ODM) library for elegant data interaction.
+- **Styling:** **Tailwind CSS**, with a class-based Dark Mode implementation using CSS variables.
+- **Authentication:** **bcryptjs** for password hashing and **jsonwebtoken** for managing user sessions.
+- **Client-Side Security:** **crypto-js** for AES encryption of vault items.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## How to Run Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  Clone the repository.
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Create a `.env` file in the project root and add your environment variables:
+    ```
+    MONGODB_URI="your_mongodb_connection_string"
+    JWT_SECRET="your_jwt_secret_key"
+    ```
+4.  Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Note on Cryptography
+
+For client-side security, this project uses the `crypto-js` library. This was chosen to provide a straightforward and well-vetted implementation of the AES encryption standard, allowing for robust encryption of user passwords directly in the browser before they are ever sent to the server.
