@@ -2,7 +2,7 @@
 
 A full-stack web application designed to securely generate, store, and manage user passwords with a modern, theme-aware interface.
 
-[**Live Demo**](https://assessment-iwqc-7yn5yk3ag-vedantkhedkars-projects.vercel.app/)
+[**Live Demo**](https://assessment-nine-beta.vercel.app/)
 
 ---
 ![Secure Vault Screenshot](/src/assets/image.png)
