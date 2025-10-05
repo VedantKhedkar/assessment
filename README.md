@@ -51,4 +51,8 @@ This project was built using a modern, full-stack JavaScript architecture:
 
 ## Note on Cryptography
 
+<<<<<<< HEAD
 For client-side security, this project uses the `crypto-js` library. This was chosen to provide a straightforward and well-vetted implementation of the AES encryption standard, allowing for robust encryption of user passwords directly in the browser before they are ever sent to the server.
+=======
+For client-side security, this project uses the `crypto-js` library. This was chosen to provide a straightforward and well-vetted implementation of the AES encryption standard, allowing for robust encryption of user passwords directly in the browser before they are ever sent to the server.
+>>>>>>> d7ccd46df4f73c0f92c8edd8fb66d62862fe5ace
